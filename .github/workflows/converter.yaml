@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'kubook/src/diagrams/**'
+  workflow_dispatch:
 
 jobs:
   excalirender:
@@ -24,6 +25,6 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add ./diagrams/exports
+          git add ./kubook/src/images
           git commit -m "Update excalidraw exports" || echo "No changes to commit"
           git push origin main
