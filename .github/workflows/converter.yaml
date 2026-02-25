@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'diagrams/**'
+      - 'kubook/src/diagrams/**'
 
 jobs:
   excalirender:
@@ -18,7 +18,7 @@ jobs:
         run: curl -fsSL https://raw.githubusercontent.com/JonRC/excalirender/main/install.sh | sh
 
       - name: Run excalirender
-        run: excalirender -r ./diagrams --transparent --dark -s 2 -o ./diagrams/exports
+        run: excalirender -r ./kubook/src/diagrams --transparent --dark -s 2 -o ./kubook/src/images
 
       - name: Commit and push changes
         run: |
