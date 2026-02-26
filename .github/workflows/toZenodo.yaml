@@ -31,7 +31,7 @@ jobs:
 
       - name: Convert print.html to PDF
         run: |
-          wkhtmltopdf kubook/book/print.html kubook/book/kubernetes-system-design.pdf
+          wkhtmltopdf --enable-local-file-access kubook/book/print.html kubook/book/kubernetes-system-design.pdf
 
       - name: Get current date for release tag
         id: date
