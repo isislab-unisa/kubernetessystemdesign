@@ -11,7 +11,7 @@ This category includes the following learning objectives:
 
 Your team needs an internal monitoring dashboard that runs inside the cluster and shows, at any time, the node and namespace they are working in.
 
-The dashboard must be packaged as a single container image ([paulbouwer/hello-kubernetes dashboard](https://hub.docker.com/r/paulbouwer/hello-kubernetes)). It does not need to be highly resilient, since brief periods of unavailability are acceptable.
+The dashboard must be packaged as a single container image ([hello-kubernetes dashboard](https://hub.docker.com/r/paulbouwer/hello-kubernetes)). It does not need to be highly resilient, since brief periods of unavailability are acceptable.
 
 However, other services inside the cluster need a stable address to reach it, so Pod IPs alone are not enough. Make sure the dashboard is strictly for internal use and not accessible from outside the cluster.
 
