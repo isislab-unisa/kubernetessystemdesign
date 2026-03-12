@@ -33,26 +33,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Check for diagram changes
-        if: github.event_name != 'workflow_dispatch'
-        id: check-changes
-        run: |
-          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q 'kubook/src/diagrams/'; then
-            echo "diagrams-changed=true" >> $GITHUB_OUTPUT
-          else
-            echo "diagrams-changed=false" >> $GITHUB_OUTPUT
-          fi
-
       - name: Install excalirender
-        if: steps.check-changes.outputs.diagrams-changed == 'true' || github.event_name == 'workflow_dispatch'
         run: curl -fsSL https://raw.githubusercontent.com/JonRC/excalirender/main/install.sh | sh
 
       - name: Run excalirender
-        if: steps.check-changes.outputs.diagrams-changed == 'true' || github.event_name == 'workflow_dispatch'
         run: excalirender -r ./kubook/src/diagrams --transparent -s 2 -o ./kubook/src/images
 
       - name: Commit and push changes
-        if: steps.check-changes.outputs.diagrams-changed == 'true' || github.event_name == 'workflow_dispatch'
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
