@@ -391,7 +391,7 @@ While the command is running, open the Killercoda traffic forwarding panel:
 2. Enter `8080` in the port field and click **Access**.
 
 A new browser tab will open pointing to the Killercoda-provided URL for port `8080`. Append the path to the URL in the browser address bar to reach each service:
-- `<killercoda-url>/dashboard` should display the `Main Dashboard` page.
-- `<killercoda-url>/admin` should display the `Admin Panel` page.
+- `<killercoda-url>/dashboard` — should display the `Main Dashboard` page.
+- `<killercoda-url>/admin` — should display the `Admin Panel` page.
 
 To stop the port forwarding, press `Ctrl+C` in the terminal.
