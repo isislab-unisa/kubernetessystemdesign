@@ -14,3 +14,7 @@
     - run the book locally: `mdbook serve`
     - run then book locally with live reload: `mdbook serve --watcher native`
     - build the book for deployment: `mdbook build`
+
+## Playground
+
+You can access a Kubernetes playground where you can experiment with tasks at [killercoda](https://killercoda.com/isislab/scenario/exam-playground).
