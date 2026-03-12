@@ -103,6 +103,20 @@ Each service must be reachable only within the cluster through a ClusterIP Servi
 
 ### Architectural design
 
+The task requires two independent applications reachable from outside the cluster through a single entry point, with path-based routing to direct traffic to the correct backend. Each application must remain internal (ClusterIP only), and only the Gateway accepts external traffic. These constraints drive four design decisions:
+
+1. Each application runs as its own Deployment with one replica. Keeping the dashboard and the admin panel in separate Deployments means they can be scaled, updated, and rolled back independently. Each Deployment creates a ReplicaSet that manages a single Pod.
+
+2. Each Deployment is connected with a ClusterIP Service (`dashboard-svc` and `admin-svc`) to provide a stable cluster-internal DNS name and load-balance traffic to the Pods. They accept requests on port `80` and forward them to the container port `8080`. Because ClusterIP has no external port, neither service is reachable from outside the cluster on its own.
+
+3. A Gateway resource (`app-gateway`) is the single externally accessible component. It listens for HTTP traffic on port `80` and is backed by the `nginx` gateway. In bare-metal environments the controller exposes a NodePort Service, giving external clients a reachable port on the node IP.
+
+4. An HTTPRoute resource (`app-routes`) binds to the Gateway and defines the path-based routing rules. Requests to `/dashboard` are forwarded to `dashboard-svc`, and requests to `/admin` are forwarded to `admin-svc`. A URL rewrite filter strips the path prefix before the request reaches the backend, so each application receives traffic at `/` regardless of the original path.
+
+![Architecture diagram](images/internet-facing-application-deployment.png)
+
+The diagram shows the resulting architecture: external clients send HTTP requests to the Gateway, which is the only component with an externally accessible port. The HTTPRoute inspects the request path and forwards traffic to the correct ClusterIP Service, which in turn reaches the Pod managed by the corresponding Deployment. The two application Services have no external route, so they are unreachable from outside the cluster without the Gateway.
+
 ### Implementation
 
 #### Deploy the applications

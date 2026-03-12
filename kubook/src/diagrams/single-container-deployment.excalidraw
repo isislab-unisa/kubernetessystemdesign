@@ -55,8 +55,8 @@
         "type": 3
       },
       "seed": 600002,
-      "version": 119,
-      "versionNonce": 1168663080,
+      "version": 121,
+      "versionNonce": 1640966576,
       "isDeleted": false,
       "boundElements": [
         {
@@ -64,7 +64,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1773308603415,
+      "updated": 1773321280089,
       "link": null,
       "locked": false
     },
@@ -325,10 +325,10 @@
     {
       "id": "arrow-client-svc",
       "type": "arrow",
-      "x": 110.2458746843511,
-      "y": 305.51725424279135,
-      "width": 169.64651297909037,
-      "height": 0.26123208906773243,
+      "x": 110.33538274099172,
+      "y": 305.83463705529135,
+      "width": 169.74145316463725,
+      "height": 3.2733748445260176,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -344,11 +344,11 @@
         "type": 2
       },
       "seed": 111116,
-      "version": 556,
-      "versionNonce": 720626061,
+      "version": 574,
+      "versionNonce": 284458416,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1773308833061,
+      "updated": 1773321280624,
       "link": null,
       "locked": false,
       "points": [
@@ -357,20 +357,20 @@
           0
         ],
         [
-          169.64651297909037,
-          0.26123208906773243
+          169.74145316463725,
+          -3.2733748445260176
         ]
       ],
       "lastCommittedPoint": null,
       "startBinding": {
         "elementId": "ext-bg-rect",
-        "focus": -0.08282515314338645,
+        "focus": -0.0671754888187125,
         "gap": 14
       },
       "endBinding": {
         "elementId": "svc-bg-rect",
-        "focus": 0.05198300421755101,
-        "gap": 26.094393432499714
+        "focus": 0.09229333988170056,
+        "gap": 26.278841674687214
       },
       "startArrowhead": null,
       "endArrowhead": "arrow",
@@ -381,8 +381,8 @@
       "type": "arrow",
       "x": 422.5534947223078,
       "y": 301.8803308347356,
-      "width": 177.97210969552356,
-      "height": 1.684898424889525,
+      "width": 194.2346219025548,
+      "height": 6.86339573934265,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -398,11 +398,11 @@
         "type": 2
       },
       "seed": 111117,
-      "version": 1288,
-      "versionNonce": 1475399976,
+      "version": 1352,
+      "versionNonce": 1634585008,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1773308496559,
+      "updated": 1773321284203,
       "link": null,
       "locked": false,
       "points": [
@@ -411,20 +411,20 @@
           0
         ],
         [
-          177.97210969552356,
-          -1.684898424889525
+          194.2346219025548,
+          -6.86339573934265
         ]
       ],
       "lastCommittedPoint": null,
       "startBinding": {
         "elementId": "svc-bg-rect",
-        "focus": -0.08101891211345966,
+        "focus": -0.063358776501332,
         "gap": 26.244499508633965
       },
       "endBinding": {
         "elementId": "rs-box",
-        "focus": 0.05476426907286143,
-        "gap": 8.264861890762404
+        "focus": 0.12488516703785633,
+        "gap": 7.997650316268846
       },
       "startArrowhead": null,
       "endArrowhead": "arrow",
