@@ -15,6 +15,18 @@ The web server must run as an [nginx](https://hub.docker.com/_/nginx) container 
 
 ### Architectural design
 
+The task requires an internal web server that stays available across Pod failures without manual intervention, and must be reachable only from inside the cluster. These constraints drive three design decisions:
+
+1. A Deployment with three replicas ensures the web server remains available even when individual Pods fail or are rescheduled. The Deployment creates a ReplicaSet that continuously reconciles the actual number of running Pods with the desired count. If a Pod crashes or is evicted, the ReplicaSet controller detects the mismatch and immediately schedules a replacement, restoring full capacity without manual intervention.
+
+2. Other services need a stable address to reach the web server. Pod IPs change every time a Pod is recreated, and with three replicas there are three different IPs at any given moment. A ClusterIP Service (`nginx-resilient-svc`) solves both problems: it provides a fixed cluster-internal DNS name and load-balances traffic across all healthy replicas, so callers are unaffected by individual Pod restarts or rescheduling.
+
+3. The web server must not be accessible from outside the cluster. A ClusterIP Service has no external port and no route from outside the cluster network, so it satisfies this requirement by design. No Gateway, Ingress, or NodePort is needed.
+
+![Architecture diagram](images/resilient-application-deployment.png)
+
+The diagram shows the resulting architecture: external clients have no path into the application, while internal services reach the web server through the ClusterIP Service, which load-balances traffic across the three Pod replicas managed by the Deployment's ReplicaSet.
+
 ### Implementation
 
 We start by creating a Deployment with three replicas. The `--replicas=3` flag tells the Deployment controller to keep three Pod instances running at all times. If a Pod crashes or is deleted, the controller will automatically create a replacement to restore the desired count.
