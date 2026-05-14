@@ -1,14 +1,14 @@
-# Namespace-isolated application deployment
+# Topic C: Namespace-isolated application deployment
 
 Design and deploy the same application with its internal Service into separate Namespaces to simulate staging and production environments.
 
-This category includes the following learning objectives:
+This topic includes the following learning objectives:
 - Understanding of Pods.
 - Understanding of Deployments.
 - Understanding of ClusterIP Services.
 - Understanding of Namespace isolation, resource scoping, and deploying objects into specific Namespaces.
 
-## Task 1: Design and deploy a web application in staging and production namespaces
+## Task C.1: Design and deploy a web application in staging and production namespaces
 
 Your team needs to run the same internal web application in two isolated environments: `staging` and `production`. Each environment must be fully self-contained, with its own Deployment and Service, so that changes in one environment cannot affect the other.
 
@@ -241,7 +241,7 @@ The same can be done to access the production web application:
 wget -qO- http://web-app-svc.production.svc.cluster.local
 ```
 
-## Task 2: Design and deploy an internal API status endpoint in dev and QA namespaces
+## Task C.2: Design and deploy an internal API status endpoint in dev and QA namespaces
 
 Your team needs to run the same internal API status endpoint in two isolated environments: `dev` and `qa`. Each environment must be fully self-contained, with its own Deployment and Service, so that developers and testers can work independently without interfering with each other.
 
@@ -455,7 +455,7 @@ The same can be done to access the QA API status endpoint:
 wget -qO- http://api-status-svc.qa.svc.cluster.local
 ```
 
-## Task 3: Design and deploy an internal request debugging tool in team-isolated namespaces
+## Task C.3: Design and deploy an internal request debugging tool in team-isolated namespaces
 
 Your organization has two independent development teams, `team-alpha` and `team-beta`, that share the same cluster. Each team needs its own instance of an internal request debugging tool so they can inspect HTTP headers and connection details without interfering with each other.
 
@@ -664,7 +664,7 @@ The same can be done to access the team-beta debugging tool:
 wget -qO- http://request-debug-svc.team-beta.svc.cluster.local
 ```
 
-## Task 4: Design and deploy a namespace verification endpoint in canary and stable namespaces
+## Task C.4: Design and deploy a namespace verification endpoint in canary and stable namespaces
 
 Your team uses a canary release strategy and needs a simple endpoint in each environment that confirms which namespace a request is being served from. This allows developers to verify that traffic is reaching the correct environment before promoting a canary release.
 
@@ -857,7 +857,7 @@ The same can be done to access the stable endpoint:
 wget -qO- http://ns-echo-svc.stable.svc.cluster.local
 ```
 
-## Task 5: Design and deploy an internal welcome page in blue-green namespaces
+## Task C.5: Design and deploy an internal welcome page in blue-green namespaces
 
 Your team uses a blue-green deployment strategy and needs an internal welcome page in each environment so that operators can verify which environment is currently active. Each environment must be fully self-contained, with its own Deployment and Service, so that one can be updated while the other continues to serve traffic undisturbed.
 

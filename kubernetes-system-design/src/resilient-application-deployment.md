@@ -1,13 +1,13 @@
-# Resilient application deployment
+# Topic D: Resilient application deployment
 
 Design and deploy an application and configure it to run with multiple replicas across the cluster.
 
-This category includes the following learning objectives:
+This topic includes the following learning objectives:
 - Understanding of Pods.
 - Understanding of Deployments.
 - Understanding of ReplicaSets.
 
-## Task 1: Design and deploy a resilient web server with multiple replicas
+## Task D.1: Design and deploy a resilient web server with multiple replicas
 
 Your team needs an internal web server that must remain available even when individual Pod instances fail or are rescheduled. The service must continue serving requests without manual intervention.
 
@@ -240,7 +240,7 @@ The output shows each Pod's access log with only the requests it handled, confir
 
 The Service acts as a stable endpoint regardless of how many Pods are running at any given moment, which means callers never need to track individual Pod IPs.
 
-## Task 2: Design and deploy a resilient API service with multiple replicas
+## Task D.2: Design and deploy a resilient API service with multiple replicas
 
 Your team needs an internal API service that returns runtime metadata about the application. It must remain available even when individual Pod instances fail or are rescheduled, and the service must continue responding to requests without manual intervention.
 

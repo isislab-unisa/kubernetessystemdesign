@@ -1,8 +1,8 @@
-# Internet-facing application deployment
+# Topic E: Internet-facing application deployment
 
 Design and deploy an application with its internal Service and expose it externally using the Kubernetes Gateway API with path-based routing rules.
 
-This category includes the following learning objectives:
+This topic includes the following learning objectives:
 - Understanding of Pods.
 - Understanding of Deployments.
 - Understanding of ClusterIP Services.
@@ -95,7 +95,7 @@ NAME    CONTROLLER                                      ACCEPTED   AGE
 nginx   gateway.nginx.org/nginx-gateway-controller      True       1m
 ```
 
-## Task 1: Design and deploy a public-facing application with path-based routing
+## Task E.1: Design and deploy a public-facing application with path-based routing
 
 Your team needs to expose two internal services to external users through a single entry point. The application consists of a main dashboard and an admin panel, each running as an independent Deployment. A Gateway sits in front of both Services and routes incoming traffic to the correct backend based on the request path: `/dashboard` for the main dashboard and `/admin` for the admin panel.
 
@@ -412,7 +412,7 @@ A new browser tab will open pointing to the Killercoda-provided URL for port `80
 
 To stop the port forwarding, press `Ctrl+C` in the terminal.
 
-## Task 2: Design and deploy a public-facing application with host-based routing
+## Task E.2: Design and deploy a public-facing application with host-based routing
 
 Your team needs to expose two internal microservices to external users through a single entry point. The application consists of an API service and a web frontend, each running as an independent Deployment. A Gateway sits in front of both Services and routes incoming traffic to the correct backend based on the request hostname: `api.example.com` for the API service and `web.example.com` for the web frontend.
 

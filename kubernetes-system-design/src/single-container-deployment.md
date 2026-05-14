@@ -1,13 +1,13 @@
-# Single-container application deployment
+# Topic A: Single-container application deployment
 
 Design and deploy a simple single-container application with a service for internal access.
 
-This category includes the following learning objectives:
+This topic includes the following learning objectives:
 - Understanding of Pods.
 - Understanding of Deployments.
 - Understanding of ClusterIP services.
 
-## Task 1: Design and deploy an internal dashboard
+## Task A.1: Design and deploy an internal dashboard
 
 Your team needs an internal monitoring dashboard that runs inside the cluster and shows, at any time, the node and namespace they are working in.
 
@@ -162,7 +162,7 @@ The dashboard HTML should look similar to the example below:
 </html>
 ```
 
-## Task 2: Design and deploy an internal request inspector
+## Task A.2: Design and deploy an internal request inspector
 
 Your team needs an internal debugging tool that runs inside the cluster and displays HTTP request details such as headers, source IP, and hostname. This helps developers verify how traffic flows through the cluster.
 
@@ -302,7 +302,7 @@ Host: whoami-inspector-svc:8080
 User-Agent: Wget
 ```
 
-## Task 3: Design and deploy an internal health endpoint
+## Task A.3: Design and deploy an internal health endpoint
 
 Your team needs an internal health endpoint that runs inside the cluster and returns pod metadata in JSON format. This helps the platform team verify cluster connectivity and inspect runtime information about running workloads.
 
@@ -448,7 +448,7 @@ The response should look similar to the example below:
 }
 ```
 
-## Task 4: Design and deploy an internal welcome page
+## Task A.4: Design and deploy an internal welcome page
 
 Your team needs an internal welcome page that runs inside the cluster and displays server information such as the server address, server name, and request URI. This helps developers quickly confirm that routing and DNS resolution are working correctly.
 
@@ -586,7 +586,7 @@ URI: /
 Request ID: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
 ```
 
-## Task 5: Design and deploy an internal echo service
+## Task A.5: Design and deploy an internal echo service
 
 Your team needs an internal echo service that runs inside the cluster and mirrors back the body of any HTTP request it receives. This helps developers test and validate payloads sent by other microservices without needing an external tool.
 
