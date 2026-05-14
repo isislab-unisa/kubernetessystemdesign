@@ -41,10 +41,10 @@ kubectl create namespace staging
 kubectl create namespace production
 ```
 
-Next, we create a file called `web-app.yaml` that will be reused for both environments:
+Next, we create a file called `deployment.yaml` that will be reused for both environments:
 
 ```bash
-cat <<EOF > web-app.yaml
+cat <<EOF > deployment.yaml
 ```
 
 With the following content:
@@ -86,14 +86,14 @@ Notice that the manifest does not include a `namespace` field in the metadata. W
 To verify the file was created correctly, run:
 
 ```bash
-cat web-app.yaml
+cat deployment.yaml
 ```
 
 Apply the manifest to both namespaces:
 
 ```bash
-kubectl apply -f web-app.yaml -n staging
-kubectl apply -f web-app.yaml -n production
+kubectl apply -f deployment.yaml -n staging
+kubectl apply -f deployment.yaml -n production
 ```
 
 Next, we expose each Deployment as a ClusterIP Service inside its respective namespace:
@@ -274,10 +274,10 @@ kubectl create namespace dev
 kubectl create namespace qa
 ```
 
-Next, we create a file called `api-status.yaml` that will be reused for both environments:
+Next, we create a file called `deployment.yaml` that will be reused for both environments:
 
 ```bash
-cat <<EOF > api-status.yaml
+cat <<EOF > deployment.yaml
 ```
 
 With the following content:
@@ -319,14 +319,14 @@ Notice that the manifest does not include a `namespace` field in the metadata. W
 To verify the file was created correctly, run:
 
 ```bash
-cat api-status.yaml
+cat deployment.yaml
 ```
 
 Apply the manifest to both namespaces:
 
 ```bash
-kubectl apply -f api-status.yaml -n dev
-kubectl apply -f api-status.yaml -n qa
+kubectl apply -f deployment.yaml -n dev
+kubectl apply -f deployment.yaml -n qa
 ```
 
 Next, we expose each Deployment as a ClusterIP Service inside its respective namespace:
@@ -488,10 +488,10 @@ kubectl create namespace team-alpha
 kubectl create namespace team-beta
 ```
 
-Next, we create a file called `request-debug.yaml` that will be reused for both environments:
+Next, we create a file called `deployment.yaml` that will be reused for both environments:
 
 ```bash
-cat <<EOF > request-debug.yaml
+cat <<EOF > deployment.yaml
 ```
 
 With the following content:
@@ -533,14 +533,14 @@ Notice that the manifest does not include a `namespace` field in the metadata. W
 To verify the file was created correctly, run:
 
 ```bash
-cat request-debug.yaml
+cat deployment.yaml
 ```
 
 Apply the manifest to both namespaces:
 
 ```bash
-kubectl apply -f request-debug.yaml -n team-alpha
-kubectl apply -f request-debug.yaml -n team-beta
+kubectl apply -f deployment.yaml -n team-alpha
+kubectl apply -f deployment.yaml -n team-beta
 ```
 
 Next, we expose each Deployment as a ClusterIP Service inside its respective namespace:
@@ -697,10 +697,10 @@ kubectl create namespace canary
 kubectl create namespace stable
 ```
 
-Next, we create a file called `ns-echo.yaml` that will be reused for both environments:
+Next, we create a file called `deployment.yaml` that will be reused for both environments:
 
 ```bash
-cat <<'EOF' > ns-echo.yaml
+cat <<'EOF' > deployment.yaml
 ```
 
 With the following content:
@@ -745,14 +745,14 @@ Notice that the manifest does not include a `namespace` field in the metadata. W
 To verify the file was created correctly, run:
 
 ```bash
-cat ns-echo.yaml
+cat deployment.yaml
 ```
 
 Apply the manifest to both namespaces:
 
 ```bash
-kubectl apply -f ns-echo.yaml -n canary
-kubectl apply -f ns-echo.yaml -n stable
+kubectl apply -f deployment.yaml -n canary
+kubectl apply -f deployment.yaml -n stable
 ```
 
 Next, we expose each Deployment as a ClusterIP Service inside its respective namespace:
@@ -890,10 +890,10 @@ kubectl create namespace blue
 kubectl create namespace green
 ```
 
-Next, we create a file called `ns-welcome.yaml` that will be reused for both environments:
+Next, we create a file called `deployment.yaml` that will be reused for both environments:
 
 ```bash
-cat <<EOF > ns-welcome.yaml
+cat <<EOF > deployment.yaml
 ```
 
 With the following content:
@@ -930,14 +930,14 @@ Notice that the manifest does not include a `namespace` field in the metadata. W
 To verify the file was created correctly, run:
 
 ```bash
-cat ns-welcome.yaml
+cat deployment.yaml
 ```
 
 Apply the manifest to both namespaces:
 
 ```bash
-kubectl apply -f ns-welcome.yaml -n blue
-kubectl apply -f ns-welcome.yaml -n green
+kubectl apply -f deployment.yaml -n blue
+kubectl apply -f deployment.yaml -n green
 ```
 
 Next, we expose each Deployment as a ClusterIP Service inside its respective namespace:

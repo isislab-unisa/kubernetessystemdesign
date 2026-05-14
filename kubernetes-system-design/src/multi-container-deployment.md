@@ -36,10 +36,10 @@ The diagram shows the resulting architecture: external clients have no path into
 
 Unlike single-container Pods, multi-container Pods cannot be created with `kubectl create deployment` alone. We need a YAML manifest to define both containers and the shared volume within the same Pod.
 
-We start by creating a file called `nginx-with-sidecar.yaml`:
+We start by creating a file called `deployment.yaml`:
 
 ```bash
-cat <<EOF > nginx-with-sidecar.yaml
+cat <<EOF > deployment.yaml
 ```
 
 With the following content:
@@ -93,13 +93,13 @@ There are a few things to note in this manifest:
 To verify the file was created correctly, run:
 
 ```bash
-cat nginx-with-sidecar.yaml
+cat deployment.yaml
 ```
 
 Apply the manifest to create the Deployment:
 
 ```bash
-kubectl apply -f nginx-with-sidecar.yaml
+kubectl apply -f deployment.yaml
 ```
 
 Next, we expose the Deployment as a ClusterIP Service. The Service listens on port `80` and forwards traffic to the nginx container port `80`.
@@ -225,10 +225,10 @@ The diagram shows the resulting architecture: external clients have no path into
 
 Unlike single-container Pods, multi-container Pods cannot be created with `kubectl create deployment` alone. We need a YAML manifest to define both containers and the shared volume within the same Pod.
 
-We start by creating a file called `httpd-with-monitor.yaml`:
+We start by creating a file called `deployment.yaml`:
 
 ```bash
-cat <<EOF > httpd-with-monitor.yaml
+cat <<EOF > deployment.yaml
 ```
 
 With the following content:
@@ -292,13 +292,13 @@ There are a few things to note in this manifest:
 To verify the file was created correctly, run:
 
 ```bash
-cat httpd-with-monitor.yaml
+cat deployment.yaml
 ```
 
 Apply the manifest to create the Deployment:
 
 ```bash
-kubectl apply -f httpd-with-monitor.yaml
+kubectl apply -f deployment.yaml
 ```
 
 Next, we expose the Deployment as a ClusterIP Service. The Service listens on port `80` and forwards traffic to the httpd container port `80`.
@@ -417,10 +417,10 @@ The diagram shows the resulting architecture: external clients have no path into
 
 Unlike single-container Pods, multi-container Pods cannot be created with `kubectl create deployment` alone. We need a YAML manifest to define both containers and the shared volume within the same Pod.
 
-We start by creating a file called `tomcat-with-logger.yaml`:
+We start by creating a file called `deployment.yaml`:
 
 ```bash
-cat <<EOF > tomcat-with-logger.yaml
+cat <<EOF > deployment.yaml
 ```
 
 With the following content:
@@ -485,13 +485,13 @@ There are a few things to note in this manifest:
 To verify the file was created correctly, run:
 
 ```bash
-cat tomcat-with-logger.yaml
+cat deployment.yaml
 ```
 
 Apply the manifest to create the Deployment:
 
 ```bash
-kubectl apply -f tomcat-with-logger.yaml
+kubectl apply -f deployment.yaml
 ```
 
 Next, we expose the Deployment as a ClusterIP Service. The Service listens on port `80` and forwards traffic to the Tomcat container port `8080`.
@@ -601,10 +601,10 @@ The diagram shows the resulting architecture: external clients have no path into
 
 Unlike single-container Pods, multi-container Pods cannot be created with `kubectl create deployment` alone. We need a YAML manifest to define both containers and the shared volume within the same Pod.
 
-We start by creating a file called `httpd-with-adapter.yaml`:
+We start by creating a file called `deployment.yaml`:
 
 ```bash
-cat <<EOF > httpd-with-adapter.yaml
+cat <<EOF > deployment.yaml
 ```
 
 With the following content:
@@ -669,13 +669,13 @@ There are a few things to note in this manifest:
 To verify the file was created correctly, run:
 
 ```bash
-cat httpd-with-adapter.yaml
+cat deployment.yaml
 ```
 
 Apply the manifest to create the Deployment:
 
 ```bash
-kubectl apply -f httpd-with-adapter.yaml
+kubectl apply -f deployment.yaml
 ```
 
 Next, we expose the Deployment as a ClusterIP Service. The Service listens on port `80` and forwards traffic to the httpd container port `80`.
@@ -799,10 +799,10 @@ The diagram shows the resulting architecture: external clients have no path into
 
 Unlike single-container Pods, multi-container Pods cannot be created with `kubectl create deployment` alone. We need a YAML manifest to define both containers and the shared volume within the same Pod.
 
-We start by creating a file called `nginx-with-syncer.yaml`:
+We start by creating a file called `deployment.yaml`:
 
 ```bash
-cat <<'EOF' > nginx-with-syncer.yaml
+cat <<'EOF' > deployment.yaml
 ```
 
 With the following content:
@@ -861,13 +861,13 @@ There are a few things to note in this manifest:
 To verify the file was created correctly, run:
 
 ```bash
-cat nginx-with-syncer.yaml
+cat deployment.yaml
 ```
 
 Apply the manifest to create the Deployment:
 
 ```bash
-kubectl apply -f nginx-with-syncer.yaml
+kubectl apply -f deployment.yaml
 ```
 
 Next, we expose the Deployment as a ClusterIP Service. The Service listens on port `80` and forwards traffic to the nginx container port `80`.
